@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'NicoKaku';
+  src: url('/fonts/nicokaku_v2-5.ttf') format('truetype');
+}
+
+body {
+    aspect-ratio: 1920/3160;
+    background-color: #231816;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-image {
+  margin-top: 72%;
+  position: absolute;
+  left: 50%;
+  width: 87%;
+  height: auto;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+iframe {
+    margin-top: 10%;
+    position: absolute;
+    z-index: 2;
+    aspect-ratio: 16/9;
+    width: 80%;
+    background-color: aqua;
+}
+
+
+.ranking {
+    margin-top: 78%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+    aspect-ratio: 16/8.5;
+    z-index: 2;
+}
+
+.ranking-header {
+    position: inherit;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    column-gap: 50px;
+    left: -50px;
+}
+
+.ranking-header h2 {
+    font-family: 'NicoKaku';
+    font-size: 5rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: normal;
+
+}
+
+.ranking-header .stage {
+    font-family: 'NicoKaku';
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.ranking-header .stage a {
+    text-decoration: none;
+    color: white;
+}
+
+.rankings {
+    font-family: 'NicoKaku';
+    margin-top: 9%;
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    width: 100%;
+}
+
+
+
+.left-ranking {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12.5%;
+    width: 50%;
+    height: 90%;
+}
+
+.right-ranking {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    row-gap: 4%;
+    height: 90%;
+    align-items: flex-end;
+}
+
+.left-ranking div {
+    box-sizing: border-box;
+    height: 25%;
+    width: 97%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+}
+
+.left-ranking p {
+    color: #FBFBFB;
+    display: inline-block;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.left-ranking .first {
+    border: 6px solid;
+    border-image: linear-gradient(to right, #97FED3 0%, #5DC8F9 39%, #B7B3FE 70%, #FFB1F3 100%) 1;
+    border-radius: 10px;
+    font-family: 'NicoKaku';
+    font-size: 37px;
+    justify-content: space-between;
+}
+
+.left-ranking .second {
+    border: 6px solid #5DC8F9;
+    font-family: 'NicoKaku';
+    font-size: 30px;
+    justify-content: space-between;
+}
+
+.left-ranking .third {
+    border: 6px solid #96FFD4;
+    font-family: 'NicoKaku';
+    font-size: 30px;
+    justify-content: space-between;
+}
+
+.right-ranking div {
+    box-sizing: border-box;
+    height: 9%;
+    width: 97%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FBFBFB;
+    justify-content: space-between;
+
+}
+
+.right-ranking p {
+    color: #FBFBFB;
+    display: inline-block;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.left-ranking .circle {
+    position: absolute;
+    z-index: -2;
+    left: -45px;
+    top: 50px;
+    width: 160px;
+    height: 160px;
+}
+
+.star-1 {
+    position: absolute;
+    z-index: 3;
+    top: 60px;
+    left: -40px;
+}
+
+.star-2 {
+    position: absolute;
+    z-index: 3;
+    top: 270px;
+    left: -25px;
+}
+
+.star-3 {
+    position: absolute;
+    z-index: 3;
+    top: 460px;
+    left: -25px;
+}
+
+.credits {
+    font-family: 'NicoKaku';
+    margin-top: 135%;
+    color: #FBFBFB;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    position: absolute;
+    left: 9.5%;
+}
+
+.credits p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+
+.game-exp {
+    color: #FBFBFB;
+    font-family: 'NicoKaku';
+    width: 80%;
+    font-size: 30px;
+    margin-top: 58%;
+    position: absolute;
+    left: 9.5%;
+}

@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'NicoKaku';
+  src: url('/fonts/nicokaku_v2-5.ttf') format('truetype');
+}
+
+/* Initial state - fully white screen */
+body {
+  background-color: white;
+  opacity: 0; /* Start with hidden body */
+  transition: background-color 1s ease-in, opacity 1s ease-in;
+}
+
+/* Fade-in effect when the page loads */
+body.fade-in {
+  background-color: #F5F5F5;
+  opacity: 1; /* Reveal the body */
+}
+
+body {
+  aspect-ratio: 1920 / 2752;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  background-color: #F5F5F5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  position: relative;
+  z-index: 2;
+  margin-top: -190px;
+  font-family: 'NicoKaku';
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 2.0;
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in; /* Ease-in for opacity */
+}
+
+.bg-image {
+  margin-top: 10vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 81.56%;
+  height: auto;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in; /* Ease-in for opacity */
+}
+
+.play-game {
+  margin-top: 79%;
+  background-image: url("/img/play-game.svg");
+  height: 25%;
+  resize: both;
+  aspect-ratio: 688.45/702;
+  z-index: 3;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in; /* Ease-in for opacity */
+}
+
+.footer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+}
+
+.footer-img {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in; /* Ease-in for opacity */
+}
+
+.image1 {
+  z-index: 2;
+}
+
+.image2 {
+  z-index: 1;
+}
