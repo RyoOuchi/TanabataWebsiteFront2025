@@ -5,7 +5,9 @@ const images = [];
 let currentFrame = 0;
 
 function getFrameSrc(index) {
-  return `/img/frames/ko-ta_to_ricchan_${index.toString().padStart(5, "0")}.png`;
+  return `/img/frames/ko-ta_to_ricchan_${index
+    .toString()
+    .padStart(5, "0")}.png`;
 }
 
 for (let i = 1; i <= frameCount; i++) {
@@ -70,4 +72,7 @@ window.addEventListener("scroll", updateImage);
 window.onload = () => {
   resizeCanvasToDisplaySize(canvas, context);
   render();
+  setTimeout(() => {
+    document.getElementById("hero-canvas").style.opacity = 1;
+  }, 100); // Delay the fade-in to allow initial loading
 };
