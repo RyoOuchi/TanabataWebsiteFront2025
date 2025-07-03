@@ -232,3 +232,26 @@ iframe {
     position: absolute;
     left: 9.5%;
 }
+
+.spawned-img {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition: left 0.3s ease-out, top 0.3s ease-out, transform 0.1s ease-in;
+  z-index: -1;
+}
+
+.shrink {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.trail-img {
+  position: fixed;
+    width: 100px;
+  height: auto;
+  pointer-events: none;
+  z-index: -1;
+}
+
