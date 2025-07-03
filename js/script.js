@@ -99,3 +99,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const interval = setInterval(spawnBlossom, 200);
 });
+
+function spawnStarAtRandomPosition() {
+  const finalX = Math.random() * window.innerWidth;
+  const finalY = Math.random() * window.innerHeight;
+  const startX = finalX + 383;
+  const startY = finalY - 115;
+  const randomInt = Math.floor(Math.random() * 3) + 1;
+
+  // Create the star
+  const img = document.createElement("img");
+  img.src = `img/star-${randomInt}.png`;
+  img.className = "spawned-img";
+  img.style.left = `${startX}px`;
+  img.style.top = `${startY}px`;
+  document.body.appendChild(img);
+    img.offsetWidth;
+  // Animate star to the final position
+  requestAnimationFrame(() => {
+    img.style.left = `${finalX}px`;
+    img.style.top = `${finalY}px`;
+  });
+
+  // Trail spawning logic
+  const steps = 30;
+  const trailImages = [];
+
+  for (let i = 0; i <= steps; i++) {
+    const t = i / steps;
+    const trailX = startX + (finalX - startX) * t;
+    const trailY = startY + (finalY - startY) * t;
+
+    setTimeout(() => {
+      const trail = document.createElement("img");
+      trail.src = `img/star-trail-${randomInt}.png`;
+      trail.className = "trail-img";
+      trail.style.left = `${trailX + 30}px`;
+      trail.style.top = `${trailY - 40}px`;
+      document.body.appendChild(trail);
+
+      trailImages.push(trail);
+    }, i * 10);
+  }
+
+  // Remove trails from left to right
+  setTimeout(() => {
+    for (let i = 0; i < trailImages.length; i++) {
+      setTimeout(() => {
+        const trail = trailImages[i];
+        if (trail) {
+          trail.style.opacity = "0";
+          setTimeout(() => trail.remove(), 200);
+        }
+      }, i * 10);
+    }
+  }, 300);
+
+  // Shrink star after 300ms
+  setTimeout(() => {
+    img.classList.add("shrink");
+  }, 300);
+
+  // Remove star after 400ms
+  setTimeout(() => {
+    img.remove();
+  }, 400);
+}
+
+// Automatically spawn stars at random intervals
+setInterval(spawnStarAtRandomPosition, 800); // every 500ms
+

@@ -126,3 +126,23 @@ body {
   z-index: 9999; /* Make sure it's on top */
   transition: opacity 0.2s linear;
 }
+
+.spawned-img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition: left 0.3s ease-out, top 0.3s ease-out, transform 0.1s ease-in;
+}
+
+.shrink {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.trail-img {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  pointer-events: none;
+}
