@@ -4,7 +4,7 @@
 }
 
 body {
-    aspect-ratio: 1920/3160;
+    aspect-ratio: 1920/3280;
     background-color: #231816;
     display: flex;
     justify-content: center;
@@ -213,6 +213,7 @@ iframe {
     width: 80%;
     position: absolute;
     left: 9.5%;
+    margin-bottom: 50px;
 }
 
 .credits p {
