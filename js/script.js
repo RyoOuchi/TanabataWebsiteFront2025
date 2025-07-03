@@ -26,6 +26,15 @@ window.addEventListener(
     if (star) {
       star.style.transform = `translate(-50%, -50%) scale(${scaleFactor})`;
     }
+
+    const overlay = document.getElementById("white-overlay");
+
+    const maxScrollForFade = 10000; // adjust based on how quickly you want it to turn white
+    const opacity = Math.min(virtualScrollY / maxScrollForFade, 1);
+
+    if (overlay) {
+      overlay.style.opacity = opacity;
+    }
   },
   { passive: false }
 );

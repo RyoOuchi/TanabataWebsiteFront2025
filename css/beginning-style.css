@@ -114,4 +114,15 @@ body {
   transform-origin: -10% 100%;
 }
 
-
+#white-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999; /* Make sure it's on top */
+  transition: opacity 0.2s linear;
+}
