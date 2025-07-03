@@ -138,7 +138,7 @@ document.addEventListener("click", (e) => {
   const randomInt = Math.floor(Math.random() * 3) + 1;
   // Create the star
   const img = document.createElement("img");
-  img.src = `img/star-${randomInt}.png`
+  img.src = `img/star-${randomInt}.webp`
   img.className = "spawned-img";
   img.style.left = `${startX}px`;
   img.style.top = `${startY}px`;
@@ -161,7 +161,7 @@ document.addEventListener("click", (e) => {
 
     setTimeout(() => {
       const trail = document.createElement("img");
-      trail.src = `img/star-trail-${randomInt}.png`;
+      trail.src = `img/star-trail-${randomInt}.webp`;
       trail.className = "trail-img";
       trail.style.left = `${trailX + 30}px`;
       trail.style.top = `${trailY - 40}px`;

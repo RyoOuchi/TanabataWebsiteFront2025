@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const blossom = document.createElement("div");
     blossom.classList.add("cherry-blossom");
     const variant = Math.floor(Math.random() * 4) + 1;
-    blossom.style.backgroundImage = `url('img/assets/tanzaku-${variant}.png')`;
+    blossom.style.backgroundImage = `url('img/assets/tanzaku-${variant}.webp')`;
 
     blossom.style.left = `${Math.random() * 100}vw`;
     blossom.style.top = `-10px`;
@@ -109,7 +109,7 @@ function spawnStarAtRandomPosition() {
 
   // Create the star
   const img = document.createElement("img");
-  img.src = `img/star-${randomInt}.png`;
+  img.src = `img/star-${randomInt}.webp`;
   img.className = "spawned-img";
   img.style.left = `${startX}px`;
   img.style.top = `${startY}px`;
@@ -132,7 +132,7 @@ function spawnStarAtRandomPosition() {
 
     setTimeout(() => {
       const trail = document.createElement("img");
-      trail.src = `img/star-trail-${randomInt}.png`;
+      trail.src = `img/star-trail-${randomInt}.webp`;
       trail.className = "trail-img";
       trail.style.left = `${trailX + 30}px`;
       trail.style.top = `${trailY - 40}px`;
