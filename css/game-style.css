@@ -177,31 +177,30 @@ iframe {
 .left-ranking .circle {
     position: absolute;
     z-index: -2;
-    left: -45px;
-    top: 50px;
-    width: 160px;
-    height: 160px;
+    left: -3.7%;
+    top: 8%;
+    width: 14%;
 }
 
 .star-1 {
     position: absolute;
     z-index: 3;
-    top: 60px;
-    left: -40px;
+    top: 10%;
+    left: -3.6%;
 }
 
 .star-2 {
     position: absolute;
     z-index: 3;
-    top: 270px;
-    left: -25px;
+    top: 40%;
+    left: -2.3%;
 }
 
 .star-3 {
     position: absolute;
     z-index: 3;
-    top: 460px;
-    left: -25px;
+    top: 69%;
+    left: -2.3%;
 }
 
 .credits {
