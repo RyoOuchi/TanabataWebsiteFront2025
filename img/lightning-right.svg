@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_3" data-name="レイヤー 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 144.1 152.96">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_名称未設定グラデーション_112);
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_112" data-name="名称未設定グラデーション 112" x1="113.16" y1="24.17" x2=".79" y2="141.18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb1f3"/>
+      <stop offset=".5" stop-color="#b7b3fe"/>
+      <stop offset=".99" stop-color="#5dc8f9"/>
+    </linearGradient>
+  </defs>
+  <g id="_宇宙" data-name="宇宙">
+    <polygon class="cls-1" points="81.62 76.03 144.1 41.83 88.47 0 41.25 72.23 51.17 76.16 16.45 112.68 31.68 119.01 0 152.96 58.15 126.23 41.46 118.43 104.92 81.62 81.62 76.03"/>
+  </g>
+</svg>

@@ -1,16 +1,117 @@
 body {
   margin: 0;
-  height: 10000px;
-  background: black;
+  padding: 0;
+  background-color: #231816;
+  overflow: hidden;
 }
-canvas {
-  position: fixed;
+
+.bg-img-scroll {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.light-from-star {
+  width: 100%;
+  height: 100%;
+}
+
+.rainbow-road {
+  width: 100%;
+  height: 100%;
+}
+
+.star-scroll {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  will-change: transform;
+}
+
+@keyframes rotateOnly {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.star-scroll-rotating {
+  animation: rotateOnly 5s linear infinite;
+  width: 100%;
+  height: 100%;
+}
+
+#cherry-blossoms-container {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: block;
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
 }
+
+.cherry-blossom {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("assets/tanzaku-1.png");
+  background-size: cover;
+  opacity: 0.8;
+  animation: fallAndFlutter var(--fall-duration) linear infinite;
+  transform-origin: center;
+}
+
+@keyframes fallAndFlutter {
+  0% {
+    transform: translateY(0) translateX(0) rotateZ(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) translateX(-10px) rotateZ(var(--rotate-speed));
+  }
+  50% {
+    transform: translateY(50vh) translateX(10px)
+      rotateZ(calc(var(--rotate-speed) * 1.2));
+  }
+  75% {
+    transform: translateY(75vh) translateX(-10px)
+      rotateZ(calc(var(--rotate-speed) * 1.8));
+  }
+  100% {
+    transform: translateY(100vh) translateX(0)
+      rotateZ(calc(var(--rotate-speed) * 2));
+    opacity: 0.5;
+  }
+}
+
+.lightning-left {
+  position: absolute;
+  width: 13%;
+  height: 13%;
+  top: 40%;
+  left: 30%;
+  transform-origin: 150% 60%;
+}
+
+.lightning-right {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  top: 27%;
+  left: 55%;
+  transform-origin: -10% 100%;
+}
+
+
