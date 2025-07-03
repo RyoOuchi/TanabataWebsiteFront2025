@@ -25,7 +25,7 @@ iframe {
     position: absolute;
     z-index: 2;
     aspect-ratio: 16/9;
-    width: 80%;
+    width: 1170px;
     background-color: #231816;
 }
 
