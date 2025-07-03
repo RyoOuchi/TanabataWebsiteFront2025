@@ -43,5 +43,16 @@ h3 {
 .end-image {
     height: 130px;
     width: 130px;
-    transform: translateX(70px);
+    animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: translateX(70px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(70px) rotate(360deg);
+    }
 }

@@ -6,7 +6,7 @@ const teamNameMap = {
   4: "りんちゃん班",
   5: "かめさん班",
   10: "ハリー班",
-  123: "にとりん班"
+  123: "にとりん班",
 };
 
 let currentStage = 1;
@@ -15,27 +15,46 @@ let groupedData = {};
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const data = await fetchData("https://a0ab-1-21-49-121.ngrok-free.app/get-all");
+    const data = await fetchData("http://13.54.91.110/get-all");
+
+    if (!Array.isArray(data) || data.length === 0) {
+      console.log("No data yet");
+    }
+
     groupedData = filterTopScoresPerTeam(groupByStage(data));
 
     setupStageSwitching();
     renderStage(currentStage);
+
+    setInterval(async () => {
+      try {
+        const data = await fetchData("http://13.54.91.110/get-all");
+
+        if (!Array.isArray(data) || data.length === 0) {
+          console.log("No data yet");
+        }
+
+        groupedData = filterTopScoresPerTeam(groupByStage(data));
+        renderStage(currentStage);
+        console.log("Scoreboard updated");
+      } catch (error) {
+        console.error("Failed to refresh scoreboard:", error);
+      }
+    }, 30000);
   } catch (error) {
     console.error("Error processing data:", error);
   }
 });
 
 async function fetchData(url) {
-  const response = await fetch(url, {
-    headers: { "ngrok-skip-browser-warning": "true" }
-  });
+  const response = await fetch(url);
   const text = await response.text();
   return JSON.parse(text);
 }
 
 function groupByStage(data) {
   const grouped = {};
-  data.forEach(entry => {
+  data.forEach((entry) => {
     const stage = entry.stage;
     if (!grouped[stage]) grouped[stage] = [];
     grouped[stage].push(entry);
@@ -47,7 +66,7 @@ function filterTopScoresPerTeam(grouped) {
   const result = {};
   for (const [stage, entries] of Object.entries(grouped)) {
     const topByTeam = {};
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       const { teamId, score } = entry;
       if (!topByTeam[teamId] || topByTeam[teamId].score < score) {
         topByTeam[teamId] = entry;
@@ -69,8 +88,10 @@ function renderStage(stage) {
   const key = `stage-${stage}`;
   const entries = groupedData[key] ? sortByScore(groupedData[key]) : [];
 
-  const allRankSlots = document.querySelectorAll(".left-ranking div, .right-ranking div");
-  allRankSlots.forEach(div => {
+  const allRankSlots = document.querySelectorAll(
+    ".left-ranking div, .right-ranking div"
+  );
+  allRankSlots.forEach((div) => {
     const ps = div.querySelectorAll("p");
     if (ps.length >= 3) {
       ps[0].textContent = "--";
@@ -84,7 +105,7 @@ function renderStage(stage) {
     const paragraphs = rankDiv.querySelectorAll("p");
     const teamName = teamNameMap[entry.teamId] || `チーム${entry.teamId}`;
     if (paragraphs.length >= 3) {
-      paragraphs[0].textContent = (i + 1).toString().padStart(2, '0');
+      paragraphs[0].textContent = (i + 1).toString().padStart(2, "0");
       paragraphs[1].textContent = teamName;
       paragraphs[2].textContent = `${entry.score}pt`;
     }
@@ -92,7 +113,7 @@ function renderStage(stage) {
 }
 
 function setupStageSwitching() {
-  document.getElementById("prev-stage").addEventListener("click", e => {
+  document.getElementById("prev-stage").addEventListener("click", (e) => {
     e.preventDefault();
     if (currentStage > 1) {
       currentStage--;
@@ -100,7 +121,7 @@ function setupStageSwitching() {
     }
   });
 
-  document.getElementById("next-stage").addEventListener("click", e => {
+  document.getElementById("next-stage").addEventListener("click", (e) => {
     e.preventDefault();
     if (currentStage < maxStage) {
       currentStage++;
