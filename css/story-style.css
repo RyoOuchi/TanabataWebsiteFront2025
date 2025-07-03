@@ -55,9 +55,8 @@ h1 {
 }
 
 .play-game {
-  margin-top: 79%;
-  background-image: url("/img/play-game.svg");
-  height: 25%;
+  margin-top: 75%;
+  height: 20%;
   resize: both;
   aspect-ratio: 688.45/702;
   z-index: 3;
@@ -65,8 +64,21 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Align text to the bottom */
   opacity: 0; /* Start hidden */
   transition: opacity 1s ease-in; /* Ease-in for opacity */
+  text-decoration: none;
+}
+
+.play-text {
+  color: black;
+  font-size: 40px;
+  font-family: 'NicoKaku';
+  margin-bottom: 10px;
+  
 }
 
 .footer {
