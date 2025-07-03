@@ -3,17 +3,15 @@
   src: url('/fonts/nicokaku_v2-5.ttf') format('truetype');
 }
 
-/* Initial state - fully white screen */
 body {
   background-color: white;
-  opacity: 0; /* Start with hidden body */
+  opacity: 0;
   transition: background-color 1s ease-in, opacity 1s ease-in;
 }
 
-/* Fade-in effect when the page loads */
 body.fade-in {
   background-color: #F5F5F5;
-  opacity: 1; /* Reveal the body */
+  opacity: 1;
 }
 
 body {
@@ -37,8 +35,8 @@ h1 {
   font-size: 40px;
   font-weight: normal;
   line-height: 2.0;
-  opacity: 0; /* Start hidden */
-  transition: opacity 1s ease-in; /* Ease-in for opacity */
+  opacity: 0;
+  transition: opacity 1s ease-in;
 }
 
 .bg-image {
@@ -50,8 +48,8 @@ h1 {
   height: auto;
   z-index: 1;
   transform: translate(-50%, -50%);
-  opacity: 0; /* Start hidden */
-  transition: opacity 1s ease-in; /* Ease-in for opacity */
+  opacity: 0;
+  transition: opacity 1s ease-in;
 }
 
 .play-game {
@@ -73,13 +71,7 @@ h1 {
   text-decoration: none;
 }
 
-.play-text {
-  color: black;
-  font-size: 40px;
-  font-family: 'NicoKaku';
-  margin-bottom: 10px;
-  
-}
+
 
 .footer {
   position: absolute;
@@ -106,3 +98,41 @@ h1 {
 .image2 {
   z-index: 1;
 }
+
+
+.play-text {
+  position: absolute;
+  top: 370px;
+  color: black;
+  font-size: 40px;
+  font-family: 'NicoKaku';
+  margin-bottom: 10px;
+  margin-top: 20px;
+  opacity: 0; /* Hide by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.play-game:hover .play-text {
+  opacity: 1; /* Show on hover */
+}
+
+
+.flag-img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.flag-img.hover {
+  opacity: 0;
+}
+
+.play-game:hover .flag-img.default {
+  opacity: 0;
+}
+
+.play-game:hover .flag-img.hover {
+  opacity: 1;
+}
+
