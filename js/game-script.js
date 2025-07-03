@@ -15,7 +15,7 @@ let groupedData = {};
 
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const data = await fetchData("http://13.54.91.110/get-all");
+    const data = await fetchData("https://tanabata-api-2025.fly.dev/get-all");
 
     if (!Array.isArray(data) || data.length === 0) {
       console.log("No data yet");
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     setInterval(async () => {
       try {
-        const data = await fetchData("http://13.54.91.110/get-all");
+        const data = await fetchData("https://tanabata-api-2025.fly.dev/get-all");
 
         if (!Array.isArray(data) || data.length === 0) {
           console.log("No data yet");
