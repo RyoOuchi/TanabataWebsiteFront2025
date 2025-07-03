@@ -163,9 +163,9 @@ function spawnStarAtRandomPosition() {
   // Remove star after 400ms
   setTimeout(() => {
     img.remove();
-  }, 400);
+  }, 500);
 }
 
 // Automatically spawn stars at random intervals
-setInterval(spawnStarAtRandomPosition, 800); // every 500ms
+setInterval(spawnStarAtRandomPosition, 500); // every 500ms
 
