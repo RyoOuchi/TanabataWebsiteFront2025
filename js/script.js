@@ -166,6 +166,18 @@ function spawnStarAtRandomPosition() {
   }, 500);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("white-overlay");
+  if (overlay) {
+    setTimeout(() => {
+      overlay.style.opacity = "0";
+    }, 100); // small delay to ensure visibility before fade
+  }
+
+  // ... your blossom code follows ...
+});
+
+
 // Automatically spawn stars at random intervals
 setInterval(spawnStarAtRandomPosition, 500); // every 500ms
 
