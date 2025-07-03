@@ -132,21 +132,21 @@ iframe {
     border-image: linear-gradient(to right, #97FED3 0%, #5DC8F9 39%, #B7B3FE 70%, #FFB1F3 100%) 1;
     border-radius: 10px;
     font-family: 'NicoKaku';
-    font-size: 37px;
+    font-size: 42px;
     justify-content: space-between;
 }
 
 .left-ranking .second {
     border: 6px solid #5DC8F9;
     font-family: 'NicoKaku';
-    font-size: 30px;
+    font-size: 35px;
     justify-content: space-between;
 }
 
 .left-ranking .third {
     border: 6px solid #96FFD4;
     font-family: 'NicoKaku';
-    font-size: 30px;
+    font-size: 35px;
     justify-content: space-between;
 }
 
@@ -170,6 +170,7 @@ iframe {
     text-align: center;
     margin-left: 20px;
     margin-right: 20px;
+    font-size: 25px;
 }
 
 .left-ranking .circle {
