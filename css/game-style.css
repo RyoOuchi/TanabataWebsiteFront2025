@@ -20,7 +20,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-iframe {
+.no-scroll-iframe {
     margin-top: 10%;
     position: absolute;
     z-index: 2;
@@ -28,6 +28,7 @@ iframe {
     width: 80%;
     background-color: #231816;
     border: none;
+    
 }
 
 
