@@ -65,17 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
   }
 
-  const images = document.querySelectorAll("img");
-
-  images.forEach((img) => {
-    if (img.complete) {
-      img.classList.add("loaded");
-    } else {
-      img.addEventListener("load", () => {
-        img.classList.add("loaded");
-      });
-    }
-  });
 
   const container = document.getElementById("cherry-blossoms-container");
   const numberOfBlossoms = 10;
