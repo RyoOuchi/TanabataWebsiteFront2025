@@ -6,6 +6,7 @@ const bg = document.querySelector(".bg-img-scroll");
 const star = document.querySelector(".star-scroll");
 const lightningLeft = document.querySelector(".lightning-left");
 const lightningRight = document.querySelector(".lightning-right");
+const logo = document.querySelector(".logo");
 
 window.addEventListener(
   "wheel",
@@ -51,6 +52,9 @@ function animate() {
   }
   if (lightningRight) {
     lightningRight.style.transform = `scale(${totalScale})`;
+  }
+  if (logo) {
+    logo.style.transform = `scale(${scrollScale})`;
   }
 
   requestAnimationFrame(animate);
