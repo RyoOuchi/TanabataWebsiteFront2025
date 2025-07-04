@@ -7,7 +7,6 @@ window.addEventListener('load', () => {
     setTimeout(() => {
       element.style.opacity = 1;
 
-      // After the last element appears, show the video
       if (index === elements.length - 1) {
         showYouTubeVideo();
       }
@@ -17,7 +16,6 @@ window.addEventListener('load', () => {
 
 
 function showYouTubeVideo() {
-  // Create a fullscreen overlay
   const overlay = document.createElement("div");
   overlay.style.position = "fixed";
   overlay.style.top = "0";
@@ -30,7 +28,6 @@ function showYouTubeVideo() {
   overlay.style.justifyContent = "center";
   overlay.style.zIndex = "999";
 
-  // Create the iframe
   const iframe = document.createElement("iframe");
   iframe.width = "1120";
   iframe.height = "630";
@@ -43,20 +40,16 @@ function showYouTubeVideo() {
   iframe.style.boxShadow = "0 0 20px rgba(0,0,0,0.5)";
   iframe.style.borderRadius = "8px";
 
-  // Append iframe to overlay
   overlay.appendChild(iframe);
 
-  // Clicking outside iframe (on overlay) closes it
   overlay.addEventListener("click", () => {
     overlay.remove();
   });
 
-  // Prevent closing when clicking *inside* the iframe
   iframe.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
-  // Add overlay to document
   document.body.appendChild(overlay);
 }
 

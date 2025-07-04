@@ -13,8 +13,7 @@ function startProgress() {
       width++;
       progressBar.style.width = width + "%";
     }
-  }, 10); // Adjust the speed here
+  }, 10);
 }
 
-// Start the progress bar automatically
 window.onload = startProgress;

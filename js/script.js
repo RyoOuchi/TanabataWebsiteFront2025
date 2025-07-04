@@ -30,7 +30,7 @@ window.addEventListener(
 
     const overlay = document.getElementById("white-overlay");
 
-    const maxScrollForFade = 10000; // adjust based on how quickly you want it to turn white
+    const maxScrollForFade = 10000; 
     const opacity = Math.min(virtualScrollY / maxScrollForFade, 1);
 
     if (overlay) {
@@ -119,7 +119,6 @@ function spawnStarAtRandomPosition() {
   const startY = finalY - 115;
   const randomInt = Math.floor(Math.random() * 3) + 1;
 
-  // Create the star
   const img = document.createElement("img");
   img.src = `img/star-${randomInt}.webp`;
   img.className = "spawned-img";
@@ -127,13 +126,11 @@ function spawnStarAtRandomPosition() {
   img.style.top = `${startY}px`;
   document.body.appendChild(img);
   img.offsetWidth;
-  // Animate star to the final position
   requestAnimationFrame(() => {
     img.style.left = `${finalX}px`;
     img.style.top = `${finalY}px`;
   });
 
-  // Trail spawning logic
   const steps = 30;
   const trailImages = [];
 
@@ -154,7 +151,6 @@ function spawnStarAtRandomPosition() {
     }, i * 10);
   }
 
-  // Remove trails from left to right
   setTimeout(() => {
     for (let i = 0; i < trailImages.length; i++) {
       setTimeout(() => {
@@ -167,15 +163,13 @@ function spawnStarAtRandomPosition() {
     }
   }, 300);
 
-  // Shrink star after 300ms
   setTimeout(() => {
     img.classList.add("shrink");
   }, 300);
 
-  // Remove star after 500ms
   setTimeout(() => {
     img.remove();
   }, 500);
 }
 
-setInterval(spawnStarAtRandomPosition, 500); // every 500ms
+setInterval(spawnStarAtRandomPosition, 500);

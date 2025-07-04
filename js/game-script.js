@@ -141,7 +141,6 @@ document.addEventListener("click", (e) => {
   const startX = finalX + 383;
   const startY = finalY - 115;
   const randomInt = Math.floor(Math.random() * 3) + 1;
-  // Create the star
   const img = document.createElement("img");
   img.src = `img/star-${randomInt}.webp`
   img.className = "spawned-img";
@@ -149,14 +148,12 @@ document.addEventListener("click", (e) => {
   img.style.top = `${startY}px`;
   document.body.appendChild(img);
 
-  // Animate star to the final position
   requestAnimationFrame(() => {
     img.style.left = `${finalX}px`;
     img.style.top = `${finalY}px`;
   });
 
-  // Trail spawning logic with smaller position differences
-  const steps = 30; // increased from 10 → smoother trail
+  const steps = 30; 
   const trailImages = [];
 
   for (let i = 0; i <= steps; i++) {
@@ -173,10 +170,9 @@ document.addEventListener("click", (e) => {
       document.body.appendChild(trail);
 
       trailImages.push(trail);
-    }, i * 10); // faster interval to keep timing similar
+    }, i * 10);
   }
 
-  // Remove trails after delay — from LEFT to RIGHT
   setTimeout(() => {
     for (let i = 0; i < trailImages.length; i++) {
       setTimeout(() => {
@@ -189,12 +185,10 @@ document.addEventListener("click", (e) => {
     }
   }, 300);
 
-  // Shrink star after 300ms
   setTimeout(() => {
     img.classList.add("shrink");
   }, 300);
 
-  // Remove star after 400ms
   setTimeout(() => {
     img.remove();
   }, 400);
