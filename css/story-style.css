@@ -136,3 +136,12 @@ h1 {
   opacity: 1;
 }
 
+img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+img.loaded {
+  opacity: 1;
+}
+

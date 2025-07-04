@@ -49,6 +49,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+
+
 async function fetchData(url) {
   const response = await fetch(url);
   const text = await response.text();

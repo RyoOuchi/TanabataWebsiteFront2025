@@ -58,6 +58,25 @@ function animate() {
 requestAnimationFrame(animate);
 
 document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("white-overlay");
+  if (overlay) {
+    setTimeout(() => {
+      overlay.style.opacity = "0";
+    }, 100);
+  }
+
+  const images = document.querySelectorAll("img");
+
+  images.forEach((img) => {
+    if (img.complete) {
+      img.classList.add("loaded");
+    } else {
+      img.addEventListener("load", () => {
+        img.classList.add("loaded");
+      });
+    }
+  });
+
   const container = document.getElementById("cherry-blossoms-container");
   const numberOfBlossoms = 10;
   let spawnedBlossoms = 0;
@@ -114,7 +133,7 @@ function spawnStarAtRandomPosition() {
   img.style.left = `${startX}px`;
   img.style.top = `${startY}px`;
   document.body.appendChild(img);
-    img.offsetWidth;
+  img.offsetWidth;
   // Animate star to the final position
   requestAnimationFrame(() => {
     img.style.left = `${finalX}px`;
@@ -160,24 +179,10 @@ function spawnStarAtRandomPosition() {
     img.classList.add("shrink");
   }, 300);
 
-  // Remove star after 400ms
+  // Remove star after 500ms
   setTimeout(() => {
     img.remove();
   }, 500);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("white-overlay");
-  if (overlay) {
-    setTimeout(() => {
-      overlay.style.opacity = "0";
-    }, 100); // small delay to ensure visibility before fade
-  }
-
-  // ... your blossom code follows ...
-});
-
-
-// Automatically spawn stars at random intervals
 setInterval(spawnStarAtRandomPosition, 500); // every 500ms
-

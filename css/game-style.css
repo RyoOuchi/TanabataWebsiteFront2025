@@ -28,7 +28,6 @@ body {
     width: 80%;
     background-color: #231816;
     border: none;
-    
 }
 
 
@@ -256,4 +255,5 @@ body {
   pointer-events: none;
   z-index: -1;
 }
+
 
